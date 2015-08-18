@@ -13,11 +13,11 @@ DEFAULT_PORT = 8800
 class RequestHandler(BaseHTTPRequestHandler):
     """ Handler for the GET requests """
 
-    def go_GET(self):
+    def do_GET(self):
         """ Handler for the GET RequestHandler """
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
-        self.end_header()
+        self.end_headers()
         # Send the message to browser
         self.wfile.write("Hello from server!")
         return
